@@ -1,0 +1,25 @@
+{
+  "name": "hello_world_ts",
+  "version": "1.0.0",
+  "description": "hello world Lambda with Typescript",
+  "main": "app.js",
+  "repository": "https://github.com/awslabs/aws-sam-cli/tree/develop/samcli/local/init/templates/cookiecutter-aws-sam-hello-nodejs",
+  "author": "Mitch Alderson",
+  "license": "MIT",
+  "scripts": {
+    "test": "mocha tests/unit/",
+    "start": "yarn build && cd ../ && sam build && sam local start-api",
+    "build": "tsc",
+    "postbuild": "cp package.json dist/package.json && yarn --cwd dist install --only=production"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.83",
+    "@types/chai": "^4.2.22",
+    "@types/node": "^16.10.2",
+    "@types/sinon": "^10.0.4",
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1",
+    "sinon": "^11.1.2",
+    "typescript": "^4.4.3"
+  }
+}
