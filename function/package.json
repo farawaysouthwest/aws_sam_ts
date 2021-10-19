@@ -8,18 +8,24 @@
   "license": "MIT",
   "scripts": {
     "test": "mocha tests/unit/",
+    "coverage": "nyc yarn test",
     "start": "yarn build && cd ../ && sam build && sam local start-api",
     "build": "tsc",
     "postbuild": "cp package.json dist/package.json && yarn --cwd dist install --only=production"
   },
   "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@types/aws-lambda": "^8.10.83",
     "@types/chai": "^4.2.22",
+    "@types/mocha": "^9.0.0",
     "@types/node": "^16.10.2",
     "@types/sinon": "^10.0.4",
     "chai": "^4.2.0",
     "mocha": "^8.2.1",
+    "nyc": "^15.1.0",
     "sinon": "^11.1.2",
+    "source-map-support": "^0.5.20",
+    "ts-node": "^10.3.0",
     "typescript": "^4.4.3"
   }
 }
